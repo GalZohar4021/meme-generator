@@ -2,8 +2,6 @@
     margin-top: 1rem;
     margin: 0 auto;
     display: block;
-
-    width: var(--s);
 }
 
 content.contents {

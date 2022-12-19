@@ -64,7 +64,7 @@ div.color-tools label{
 .more-tools {
     justify-content: center;
     margin-block: 2rem;
-
+    width: 90%;
 }
 
 .tools button,
@@ -89,11 +89,13 @@ div.color-tools label{
 
 .more-tools select {
 
-    max-width: 270px;
-    max-height: 86px;
-    width: 40vw;
+    max-height: 106px;
+
+    width: 70%;
+    height: fit-content;
 
     padding-block: 1vw;
+    padding-inline: 3vw;
     font-size: 3rem;
     text-align: center;
 
@@ -208,8 +210,8 @@ nav.actions button.share-fb:active,
     div.font-tools button,
     section.tools button,
     div.color-tools label {
-        width: 4vw;
-        height: 4vw;
+        width: 10vw;
+        height: 10vw;
     }
    
 }

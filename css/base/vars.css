@@ -40,7 +40,9 @@
     --middle-padding: 30px;
 
     /* body wdth */
-    --s: 70vw;
+    --main-layout-size: 85vw;
+
+    --sub-layout-size: 90%;
     --max-xl-width: 1800px;
 
     --meme-editor-width-l: 38vw;

@@ -15,17 +15,19 @@
 
 <body onload="onInit()" class="flex-col">
 
-    <div class="main-screen full" onclick="toggleMenu()"></div>
+    <div class="main-screen full main-layout" onclick="toggleMenu()"></div>
 
-    <header class="body-part full flex-row">
-        <logo class="logo-container flex-col">
-            <a class="logo" href="#" onclick="onHomePageClick()">
+    <header class="main-layout body-part full flex-row">
+        <container class="header-box flex-row">
+
+            <logo class="logo-container flex-col">
+                <a class="logo" href="#" onclick="onHomePageClick()">
                 MemeGene.
             </a>
         </logo>
-
-
-
+        
+        
+        
         <nav class="main-nav flex">
             <nav class="menu-opener flex-row">
                 <button class="menu-toggle-btn" onclick="toggleMenu()">☰</button>
@@ -36,16 +38,17 @@
                 <li><a href="#" class="about" onclick="onAboutPage()">About</a></li>
             </ul>
         </nav>
-
-
-        </div>
+        
+        
+    </div>
+    </container>
     </header>
 
 
     <content class="contents full flex-col main-layout">
         <modal class="message-box hints"></modal>
 
-        <section class="page page-gallery main-layout">
+        <section class="page page-gallery">
 
             <section class="upload box-of-contents">
                 <h3>Upload your photo</h3>
@@ -53,7 +56,7 @@
                 <input type="file" id="img-input" name="meme" onchange="onImageInput(event)" hidden>
             </section>
 
-            <section class="main-box-gallery flex-col box-of-contents">
+            <section class="main-box-gallery flex-col box-of-contents sub-layout">
                 <bar class="search-bar flex">
                     <h3>Pick photo to modify</h3>
                     <container class="flex-row">
@@ -127,7 +130,7 @@
                     <container class="flex-row">
 
                         <div title="Download meme" class="flex-col download">
-                            <a download="meme" onclick="onDownloadMeme(this)" href="#">Download</a>
+                            <a onclick="onDownloadMeme(this)" href="#">Download</a>
                         </div>
                         <button title="Save meme" class="save" onclick="onMemeSave()">Save</button>
                     </container>

@@ -33,8 +33,9 @@ function _loadStickers() {
     if (!gStickers || !gStickers.length) {
         console.log('Failed loading Stickers data, initializing...')
         gStickers = []
+
+
         gStickers.unshift(_createSticker('img/design/stickers/approved.png'))
-        gStickers.unshift(_createSticker('img/design/stickers/israel.png'))
         gStickers.unshift(_createSticker('img/design/stickers/man.png'))
         gStickers.unshift(_createSticker('img/design/stickers/stamp.png'))
         gStickers.unshift(_createSticker('img/design/stickers/pizza1.png'))
@@ -43,6 +44,20 @@ function _loadStickers() {
         gStickers.unshift(_createSticker('img/design/stickers/pizza2.png'))
         gStickers.unshift(_createSticker('img/design/stickers/crown-black.png'))
         gStickers.unshift(_createSticker('img/design/stickers/pink-hat.png'))
+        
+        gStickers.unshift(_createSticker('img/design/stickers/israel.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/vietnam.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/germany.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/china.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/canada.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/ukraine.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/brazil.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/united-kingdom.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/united-states.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/glasses.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/sunglasses.png'))
+        gStickers.unshift(_createSticker('img/design/stickers/lol.png'))
+
         _saveStickers()
     }
     else console.log('Stickers loaded successfully')

@@ -13,6 +13,7 @@ var gCtx
 var gLastDragPos
 
 var SELECT_STATE = IDLE
+var gRenderMode = { download: false, link: '', saved: false }
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
 
 _renderFontFamilyOptions()
@@ -102,7 +103,10 @@ function renderMeme(meme) {
 
 
 function onEditText(elInput) {
-    if (getSelectedLineIdx() === -1) return
+    if (getSelectedLineIdx() === -1) {
+        onAddTextLine()
+        return
+    }
     const line = getLine()
     if (!isTextLine(line)) {
         elInput.value = ""
@@ -243,20 +247,47 @@ function getPos(ev) {
 
 
 function onMemeSave() {
-    const data = document.querySelector('#meme').toDataURL()
-    saveMeme(data)
-    setModalText('Meme Saved Successfully')
-    openModal()
-    setTimeout(() => {
-        closeModal()
-    }, 2000);
+    gRenderMode.save = true
+
+    setSelectedLine(-1)
+    renderMeme(getMeme())
 }
 
 
-function onDownloadMeme(elLink) {
-    const data = document.querySelector('#meme').toDataURL()
-    elLink.href = data
-    elLink.download = "my-img.jpg"
+function onRenderDone() {
+    if (gRenderMode.download) {
+        console.log('alert')
+        gRenderMode.download = false
+        const data = document.querySelector('#meme').toDataURL()
+        gRenderMode.link.href = data
+        gRenderMode.link.download = "my-img.jpg"
+
+        canvas.toBlob(blob => {
+            let file = new Blob([blob], { type: "application/octet-stream" })
+            let blobURL = URL.createObjectURL(file)
+            window.location.href = blobURL
+        })
+    }
+    if (gRenderMode.save) {
+        gRenderMode.save = false
+        const data = document.querySelector('#meme').toDataURL()
+        saveMeme(data)
+
+        setModalText('Meme Saved Successfully')
+        openModal()
+        setTimeout(() => {
+            closeModal()
+        }, 2000);
+    }
+}
+
+async function onDownloadMeme(elLink) {
+
+    gRenderMode.download = true
+    gRenderMode.link = elLink
+
+    setSelectedLine(-1)
+    renderMeme(getMeme())
 }
 
 

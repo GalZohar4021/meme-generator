@@ -25,6 +25,7 @@ body {
     background-image: linear-gradient(to right, #00416a, #e4e5e6);
     background-size: cover;
 }
+
 input {
     font-size: 0.6rem;
     text-align: center;
@@ -53,10 +54,12 @@ button {
     border: 0;
     border-radius: 6%;
 }
+
 button:hover {
     background-image: var(--clr-button-hover);
     cursor: pointer;
 }
+
 button:active {
     border: 1px inset white;
 }
@@ -69,8 +72,9 @@ img {
 .img-container {
     text-align: center;
 }
+
 @media(min-width: 1800px) {
-    html{
+    html {
         font-size: 13px;
     }
 }

@@ -3,7 +3,9 @@
 .meme-editor {
     display: flex;
     flex-direction: column;
+
     padding-inline: 0px;
+
     min-height: unset;
     height: fit-content;
 }
@@ -53,8 +55,8 @@ input[name="editor-text"] {
 .stickers-bar {
     margin-block: 2rem;
     background-color: var(--clr6);
-    height: 5vw;
-    max-height: 100px;
+    height: 13vw;
+    max-height: 75px;
 
     justify-content: center;
     align-items: center;
@@ -82,11 +84,11 @@ img.sticker-bar-arrow:hover {
 @media (min-width: 1200px) {
     .meme-editor {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .tools-area {
-        width: 50%;
+        width: 53%;
     }
 
     .meme-container {

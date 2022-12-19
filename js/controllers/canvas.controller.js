@@ -141,6 +141,7 @@ function drawImage(meme, container, canv, ctx, img) {
         ctx.drawImage(elImg, 0, 0, canv.width, canv.height)
 
         renderLines(ctx, meme)
+        onRenderDone()
     }
 }
 
