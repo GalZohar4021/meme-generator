@@ -1,0 +1,59 @@
+:root {
+    /* pallete */
+    --clr-1: rgb(255, 255, 255);
+    --clr0: rgb(204, 228, 241);
+    --clr1: rgb(126, 172, 198);
+    --clr2: rgb(15, 99, 183);
+    --clr3: rgb(0, 0, 0);
+    --clr4: rgb(222, 229, 234);
+    --clr5: rgb(108, 151, 188);
+    --clr6: rgba(126, 172, 198, 0.4);
+    --clr7: rgb(0, 31, 63);
+    --clr9: rgb(57, 204, 204);
+    --clr10: rgb(13, 95, 167);
+    
+    --clr-main-shadow-light: rgba(241, 241, 241, 0.7);
+    --clr-navbar: #000046;
+    --clr-memes-header: #1a1aa0;
+    --clr-button-hover: linear-gradient(to right, #000046, #1cb5e0);
+    --clr-button: linear-gradient(to right, #2B32B2, #1488CC);
+    --clr-shadow: linear-gradient(to right, #1CB5E0, #000046);
+    --clr-body-part: linear-gradient(to right, #0052D4, #65C7F7, #9CECFB);
+
+    --color-primer-shadow-highlight: inset 0 1px 0 rgba(255,255,255,0.25);
+    --color-primer-shadow-inset: inset 0 1px 0 rgba(208,215,222,0.2);
+    --color-primer-shadow-focus: 0 0 0 3px rgba(9,105,218,0.3);
+
+    --color-border-default: #d0d7de;
+    --color-accent-fg: #0969da;
+
+    --color-neutral-muted: rgba(175,184,193,0.2);
+    --color-neutral-subtle: rgba(234,238,242,0.5);
+
+    --color-shadow-small: 0 1px 0 rgba(27,31,36,0.04);
+    --color-shadow-medium: 0 3px 6px rgba(140,149,159,0.15);
+    --color-shadow-large: 0 8px 24px rgba(140,149,159,0.2);
+    --color-shadow-extra-large: 0 12px 28px rgba(140,149,159,0.3);
+    
+    /* layout */
+    --inner-padding: 80px;
+    --middle-padding: 30px;
+
+    /* body wdth */
+    --s: 70vw;
+    --max-xl-width: 1800px;
+
+    --meme-editor-width-l: 38vw;
+    --meme-editor-width-xl: 43vw;
+    --meme-editor-max-width: 670px;
+
+    /*  header height size */
+    --hdr: 10vh;
+
+    --logo: 5vh;
+
+    /* found the auto height of given --logo-max width value */
+    --logo-max-h: 88px;
+
+
+}

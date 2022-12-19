@@ -1,0 +1,50 @@
+.memes-gallery h3 {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--clr-memes-header);
+    margin-block-end: 1rem;
+
+    background-color: var(--clr-memes-header);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 3px 3px;
+}
+.memes-gallery h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--clr7);
+}
+
+section.memes-gallery {
+    justify-content: center;
+    align-items: center;
+
+}
+
+section.memes-box {
+    padding-block: 2rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-block: 2rem;
+
+    justify-content: center;
+    align-items: center;
+}
+
+card.meme-container {
+    flex-direction: column;
+    width: 25vw;
+
+    margin: 1rem;
+    background-color: var(--clr7);
+    box-shadow: 0.2rem 0.25rem 0.7rem var(--clr-main-shadow-light);
+}
+@media (max-width: 455px) {
+    .memes-gallery h3 {
+        font-size: 3rem;
+    }
+    .memes-gallery container {
+        font-size: 2rem;
+    }
+}

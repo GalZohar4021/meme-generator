@@ -1,0 +1,47 @@
+.upload {
+    margin: 0 auto;
+    padding-block: 1vh;
+    padding-inline: 5vw;
+
+    width: fit-content;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    margin-block-end: 2rem;
+}
+
+.upload h3 {
+    color: var(--clr-main-shadow-light);
+    font-size: 3rem;
+    margin: 0;
+
+    margin-block-end: 1.5rem;
+}
+
+.image-upload-custom:hover {
+    cursor: pointer;
+    background-image: var(--clr-button-hover);
+}
+
+.image-upload-custom {
+    font-size: 2rem;
+
+    padding: 0.5rem 1.5rem;
+
+    color: var(--clr-1);
+    background-image: var(--clr-button);
+
+    border: 2px groove white;
+    border-radius: 6%;
+}
+
+@media (max-width: 355px) {
+    .upload h3 {
+        font-size: 2rem;
+    }
+    .image-upload-custom {
+        font-size: 1rem;
+    }
+}

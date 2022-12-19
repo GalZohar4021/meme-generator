@@ -1,0 +1,25 @@
+modal.message-box {
+    position: fixed;
+    top: -20vh;
+
+    display: block;
+    margin-inline: 0px auto;
+
+    transition: 0.9s;
+
+    text-align: center;
+    padding: 2rem;
+
+    min-width: 25vw;
+
+    font-size: 2.5rem;
+
+    color: var(--clr7);
+}
+
+
+modal.modal-open {
+    top: unset;
+    top: 10vh;
+    /* color: #ffffff02; */
+}

@@ -1,0 +1,49 @@
+@import "main-navbar.css";
+body{
+    justify-content: space-between;
+}
+header {
+    justify-content: space-between;
+    max-height: 200px;
+    transition: 2s;
+
+}
+
+.logo-container {
+    padding-inline: 2rem;
+    max-height: 200px;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin-block: 2rem;
+    color: white;
+    font-size: 5rem;
+    font-family: ubounded;
+}
+.menu-opener{
+    float: right;
+}
+
+
+.menu-toggle-btn {
+    align-self: center;
+
+    font-size: 2.5rem;
+
+    background-image: unset;
+    background-color: var(--clr-body-part);
+
+    border: none;
+    border-radius: 0;
+
+    color: var(--clr-navbar);
+    cursor: pointer;
+}
+
+@media (min-width: 700px) {
+    .menu-toggle-btn {
+        display: none;
+    }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/design/icons/favicon.png">
+    <title>Meme Generator!</title>
+</head>
+
+<body onload="onInit()" class="flex-col">
+
+    <div class="main-screen full" onclick="toggleMenu()"></div>
+
+    <header class="body-part full flex-row">
+        <logo class="logo-container flex-col">
+            <a class="logo" href="#" onclick="onHomePageClick()">
+                MemeGene.
+            </a>
+        </logo>
+
+
+
+        <nav class="main-nav flex">
+            <nav class="menu-opener flex-row">
+                <button class="menu-toggle-btn" onclick="toggleMenu()">☰</button>
+            </nav>
+            <ul class="clean-list main-nav-items">
+                <li><a href="#" class="gallery active" onclick="onHomePageClick()">Gallery</a></li>
+                <li><a href="#" class="memes" onclick="onMemesPage()">Memes</a></li>
+                <li><a href="#" class="about" onclick="onAboutPage()">About</a></li>
+            </ul>
+        </nav>
+
+
+        </div>
+    </header>
+
+
+    <content class="contents full flex-col main-layout">
+        <modal class="message-box hints"></modal>
+
+        <section class="page page-gallery main-layout">
+
+            <section class="upload box-of-contents">
+                <h3>Upload your photo</h3>
+                <label for="img-input" class="image-upload-custom">Upload image!</label>
+                <input type="file" id="img-input" name="meme" onchange="onImageInput(event)" hidden>
+            </section>
+
+            <section class="main-box-gallery flex-col box-of-contents">
+                <bar class="search-bar flex">
+                    <h3>Pick photo to modify</h3>
+                    <container class="flex-row">
+                        <input list="tags-list-search" type="search" placeholder="Search me!"
+                            onfocusout="onSaveKeyword(this.value)" oninput="onKeywordSearched(this.value)">
+                        <datalist id="tags-list-search"></datalist>
+                        <button onclick="onResetSearch()">Reset search</button>
+                    </container>
+                    <section class="tags flex hints">
+                        <div class="tags-list flex">
+
+                        </div>
+
+                    </section>
+                </bar>
+                <section class="gallery flex">
+
+                </section>
+
+            </section>
+        </section>
+
+
+        <section class="page meme-editor main-layout hidden-page">
+
+            <div class="meme-container">
+                <canvas id="meme"></canvas>
+            </div>
+
+            <div class="tools-area flex-col box-of-contents">
+
+                <input type="text" name="editor-text" placeholder="Text line" onkeyup="onEditText(this)">
+
+                <section class="tools flex">
+                    <button title="Change Line" class="dble-arrow" onclick="onFocusChange()"></button>
+                    <button title="Remove Line" class="remove-text" onclick="onRemoveTextLine()"></button>
+                    <button title="Add Text" class="add-text" onclick="onAddTextLine()"></button>
+                </section>
+                <div class="size-align font-tools flex-row">
+                    <button title="Align left" class="align-left" onclick="onAlignmentSet('left')"></button>
+                    <button title="Align center" class="align-center" onclick="onAlignmentSet('center')"></button>
+                    <button title="Align right" class="align-right" onclick="onAlignmentSet('right')"></button>
+                    <button title="Increase font" class="fsize-up" onclick="onFontSizeUp()"></button>
+                    <button title="Decrease font" class="fsize-down" onclick="onFontSizeDown()"></button>
+                    
+                </div>
+                <div class="color-tools flex-row">
+                    <label id="stroke-label" for="stroke"></label>
+                    <input id="stroke" type='color' oninput="onStrokeDesign(this)" style="opacity: 0;">
+                    <label id="color-label" for="font-color"></label>
+                    <input id="font-color" type="color" oninput="onFontColorChange(this)" style="opacity: 0;">
+                </div>
+                <div class="more-tools flex-row">
+                    <select title="Fony family" class="font-family-menu" oninput="onFamilyFontChange(this)">
+                    </select>
+
+                </div>
+
+
+                <nav class="stickers-bar flex-row">
+
+                </nav>
+
+
+                <nav class="actions flex-row">
+                    <container class="flex-row">
+
+                        <button title="Share on facebook" class="share-fb" onclick="onFaceBookShare()"></button>
+                        <button title="More share" class="share-nav" onclick="shareNavAPI()">Share!</button>
+                    </container>
+                    <container class="flex-row">
+
+                        <div title="Download meme" class="flex-col download">
+                            <a download="meme" onclick="onDownloadMeme(this)" href="#">Download</a>
+                        </div>
+                        <button title="Save meme" class="save" onclick="onMemeSave()">Save</button>
+                    </container>
+                </nav>
+            </div>
+        </section>
+
+
+        <section class="page memes-gallery main-layout flex hidden-page">
+            <h3 class="saved-header">Your saved memes</h3>
+            <h2 class="direction">Tap to pick meme to edit and download</h2>
+            <section class="memes-box flex box-of-contents">
+            </section>
+        </section>
+
+        <section class="page page-about main-layout hidden-page">
+
+            <card class="about-me flex-row card-info">
+                <thumb class="my-thumb flex-col">
+                    <img class="about-me-img" src="img/design/about/me.jpg">
+                </thumb>
+
+                <card-info class="about-info flex-col">
+
+                    <h3 class="card-header">Gal Zohar</h3>
+                    <h2 class="card-sub-header">Fullstack Developer</h2>
+
+                    <p class="card-text">I'm a 27 from Oranit, Israel. I am a junior developr who learn Fullstack
+                        development at Coding Academy.</p>
+
+                    <span>Contact me!</span>
+                    <icons class="flex-row">
+                        <a href="https://www.facebook.com/profile.php?id=100077018276598" target="_blank">
+                            <img src="img/design/icons/facebook.png">
+                        </a>
+                        <a href="https://www.linkedin.com/in/gal-zohar-aa0101184/" target="_blank">
+                            <img src="img/design/icons/linkedin.png">
+                        </a>
+
+                        <a href="https://github.com/GalZohar4021" target="_blank">
+                            <img src="img/design/icons/github.png">
+                        </a>
+                    </icons>
+                </card-info>
+
+            </card>
+
+        </section>
+
+
+    </content>
+
+
+    <footer class="body-part main-layout full flex">
+        <h2>memegen</h2>
+        <h5>All rights reserved 2022&copy; by Gal Zohar</h5>
+    </footer>
+
+    <script src="lib/hammer.min.js"></script>
+    <script src="js/services/upload.service.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/img.service.js"></script>
+    <script src="js/services/stickers.service.js"></script>
+    <script src="js/services/keyword.service.js"></script>
+    <script src="js/services/meme.service.js"></script>
+    <script src="js/services/modal.service.js"></script>
+
+    <script src="js/controllers/stickers.controller.js"></script>
+    <script src="js/controllers/memes.gallery.controller.js"></script>
+    <script src="js/controllers/canvas.controller.js"></script>
+    <script src="js/controllers/img.controller.js"></script>
+    <script src="js/controllers/keyword.controller.js"></script>
+    <script src="js/controllers/meme-editor.controller.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

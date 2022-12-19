@@ -1,0 +1,85 @@
+bar.search-bar {
+    flex-direction: column;
+    margin: 0 auto;
+    margin-block: 1rem;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+bar.search-bar container {
+    height: 3rem;
+    margin-block: 1rem;
+    justify-content: center;
+    font-size: 1.3rem;
+    width: 90%;
+}
+
+bar.search-bar h3 {
+    margin: 0;
+    font-size: 3rem;
+    color: var(--clr-main-shadow-light);
+}
+
+
+bar.search-bar input {
+    width: 50%;
+    font-size: 1em;
+    margin-inline: 0.8rem;
+    padding: 0.15rem;
+    height: 100%;
+}
+bar.search-bar button {
+    padding-inline: 2px;
+    font-size: 1em;
+    height: 100%;
+}
+
+bar.search-bar .tags {
+    flex-direction: column;
+    padding-inline: 0.1rem;
+    width: 100%;
+
+    color: black;
+    line-height: 1.3;
+}
+bar.search-bar .tags-list {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1rem;
+}
+
+.more {
+    align-self: flex-end;
+}
+
+
+.tag {
+    margin-inline-end: 1.5rem;
+    align-self: baseline;
+}
+
+
+bar.search-bar .tags a:hover {
+    color: rgb(175, 192, 203)
+}
+
+bar.search-bar .tags span:hover {
+    color: rgb(218, 208, 208)
+}
+@media (max-width: 355px) {
+    bar.search-bar h3 {
+        font-size: 2rem;
+    }
+    bar.search-bar container {
+        font-size: 1rem;
+    }
+}
+
+
+

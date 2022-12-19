@@ -1,0 +1,76 @@
+.page-about {
+    min-height: unset;
+}
+.about-me {
+
+    max-width: 1120px;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 0 auto;
+
+    padding: 0.5rem 0.5rem;
+}
+
+.about-info {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-grow: 2;
+    direction: ltr;
+
+    padding: 2%;
+}
+
+h3.card-header {
+    font-size: 2rem;
+    color: var(--clr7);
+    margin: 0;
+}
+
+h2.card-sub-header {
+    margin: 0;
+    margin-block-start: 0.5rem;
+    font-size: 1.2rem;
+    color: rgba(105, 114, 183, 0.55);
+}
+
+.my-thumb {
+    flex-grow: 1;
+
+    justify-content: center;
+    align-items: center;
+    padding-inline: 5%;
+}
+
+img.about-me-img {
+    max-height: 200px;
+    max-width: 200px;
+    height: 12vw;
+    width: 13vw;
+    border-radius: 50%;
+
+}
+@media (max-width: 1100px) {
+    h3.card-header {
+        font-size: 1.6rem;
+    }
+    h2.card-sub-header {
+        font-size: 0.7rem;
+        margin-inline-start: 0.7rem;
+    }
+}
+
+icons {
+    height: 2rem;
+    width: 100%;
+    margin-block: 0.5rem;
+}
+
+icons a {
+    margin-inline-end: 1rem;
+}
+icons img {
+    height: 100%;
+    width: auto;
+    
+    
+}

@@ -1,0 +1,95 @@
+@import "editor-icons.css";
+
+.meme-editor {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 0px;
+    min-height: unset;
+    height: fit-content;
+}
+
+#meme {
+    width: 100%;
+    box-shadow: -0.2rem -0.2rem 0.2rem var(--clr-main-shadow-light);
+}
+
+#meme {
+    cursor: grab;
+}
+
+#meme:active {
+    cursor: grabbing;
+}
+
+.tools-area {
+    padding: 0.3rem;
+
+
+    width: 100%;
+
+    justify-content: flex-start;
+    align-items: center;
+}
+
+input[name="editor-text"] {
+    width: 80%;
+    font-size: 2.5rem;
+
+    margin-block: 1rem;
+    padding: 0.2rem 0.2rem;
+}
+
+.font-tools {
+    align-items: center;
+    justify-content: center;
+
+}
+
+.more-tools {
+    margin-block: 2rem;
+}
+
+
+.stickers-bar {
+    margin-block: 2rem;
+    background-color: var(--clr6);
+    height: 5vw;
+    max-height: 100px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.stickers-bar img {
+    height: inherit;
+    max-height: inherit;
+
+    margin-inline: 1.5rem;
+
+    border-radius: 50%;
+    padding-block: 1rem;
+}
+
+.stickers-bar img:hover,
+img.sticker-bar-arrow:hover {
+
+    background-color: var(--clr10);
+    cursor: pointer;
+}
+
+
+
+@media (min-width: 1200px) {
+    .meme-editor {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .tools-area {
+        width: 50%;
+    }
+
+    .meme-container {
+        width: 45%;
+    }
+}

@@ -1,0 +1,18 @@
+.page {
+    margin-top: 1rem;
+    margin: 0 auto;
+    display: block;
+
+    width: var(--s);
+}
+
+content.contents {
+    padding-block: 3rem;
+    flex-grow: 3;
+}
+
+@media (min-width: 1200px) {
+    content.contents {
+        min-height: calc(100vh - 200px - 3vh);
+    }
+}
