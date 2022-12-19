@@ -5,6 +5,7 @@
     flex-direction: column;
 
     padding-inline: 0px;
+    margin-inline: 0px;
 
     min-height: unset;
     height: fit-content;
@@ -88,10 +89,10 @@ img.sticker-bar-arrow:hover {
     }
 
     .tools-area {
-        width: 53%;
+        width: 40%;
     }
 
     .meme-container {
-        width: 45%;
+        width: 40%;
     }
 }

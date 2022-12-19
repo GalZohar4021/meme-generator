@@ -20,7 +20,7 @@ section.gallery {
 
     align-items: center;
 
-    justify-content: space-between;
+    justify-content: space-evenly;
 
 }
 card.img-container:hover {
@@ -39,13 +39,6 @@ card.img-container {
         width: 13.8vw;
     }
 }
-
-@media (max-width: 1400px) {
-    card.img-container {
-        width: 15vw;
-    }
-}
-
 
 @media (max-width: 800px) {
     card.img-container {

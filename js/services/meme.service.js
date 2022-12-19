@@ -95,6 +95,7 @@ function createStickerLine(sticker, pos) {
 
 function removeLine(meme, lineIdx) {
     meme.lines.splice(lineIdx, 1)
+    console.log('line removed')
 }
 
 
@@ -140,7 +141,7 @@ function getSelectedImageId(meme) {
 
 
 function isTextLine(line) {
-    return line.type === TYPE_TEXT
+    return line && line.type === TYPE_TEXT
 }
 
 

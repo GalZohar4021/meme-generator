@@ -6,7 +6,7 @@ const CIRCLE_RESIZE_START = 5
 const CIRCLE_RESIZE_CHANGE = 6
 const CIRCLE_RESIZE_END = 7
 
-var loadedListeners = false
+var gLoadedListeners = false
 var gImg
 var gCanvas
 var gCtx
@@ -25,31 +25,17 @@ function initEditMeme(meme) {
     setMeme(meme)
     renderMeme(meme)
     renderStickersBar()
-
-    if (!loadedListeners) {
+    if(!gLoadedListeners) {
         initEditorListeners()
-        loadedListeners = true
+        gLoadedListeners = true
     }
 }
 
 
 function initEditor(img) {
-
-    gImg = img
-    const meme = newMeme(gImg)
-    setMeme(meme)
-
-    gCanvas = document.querySelector('#meme')
-    gCtx = gCanvas.getContext('2d')
-
-    renderMeme(meme)
-    renderStickersBar()
-    if (!loadedListeners) {
-        initEditorListeners()
-        loadedListeners = true
-    }
+    const meme = newMeme(img)
+    initEditMeme(meme)
 }
-
 
 function initEditorListeners() {
 
@@ -156,26 +142,26 @@ function onAddStickerLine(sticker) {
 
 
 function onAlignmentSet(dir) {
+    if (getSelectedLineIdx() === -1) return
     const meme = getMeme()
     const line = getLine()
-    if (getSelectedLineIdx() === -1) return
     line.font.textAlign = dir
     renderMeme(meme)
 }
 
 
 function onRemoveTextLine() {
-    const meme = getMeme()
     if (getSelectedLineIdx() === -1) return
+    const meme = getMeme()
     removeLine(meme, getSelectedLineIdx())
     renderMeme(meme)
 }
 
 
 function onFontSizeDown() {
+    if (getSelectedLineIdx() === -1) return
     const meme = getMeme()
     const line = getLine()
-    if (getSelectedLineIdx() === -1) return
     line.font.fontSize -= 5
     renderMeme(meme)
 }
@@ -256,17 +242,11 @@ function onMemeSave() {
 
 function onRenderDone() {
     if (gRenderMode.download) {
-        console.log('alert')
         gRenderMode.download = false
         const data = document.querySelector('#meme').toDataURL()
         gRenderMode.link.href = data
         gRenderMode.link.download = "my-img.jpg"
 
-        canvas.toBlob(blob => {
-            let file = new Blob([blob], { type: "application/octet-stream" })
-            let blobURL = URL.createObjectURL(file)
-            window.location.href = blobURL
-        })
     }
     if (gRenderMode.save) {
         gRenderMode.save = false
@@ -295,6 +275,15 @@ function onDown(ev) {
     ev.preventDefault()
     const pos = getPos(ev)
     if (getSelectedLineIdx() !== -1) {
+        const line = getLine()
+
+        if (isTextLine(line) && !line.txt.length && !isLineArea(gCtx, pos, line)) {
+            onRemoveTextLine()
+            setSelectedLine(-1)
+            renderMeme(getMeme())
+            return
+        }
+
         if (isCircleArea(gCtx, pos, getLine())) {
             onCircleResizeStart(getPos(ev))
             return
@@ -327,7 +316,7 @@ function onMove(ev) {
 
 function onUp() {
     if (SELECT_STATE !== IDLE && !isResizing()) {
-        console.log('\t------------\n\t DRAGGING STOPPED\n\t -----------')
+        // console.log('\t------------\n\t DRAGGING STOPPED\n\t -----------')
         SELECT_STATE = FOCUS
     }
     else if (isResizing()) {
@@ -376,7 +365,7 @@ function onFocusLine(lineIdx) {
 
     SELECT_STATE = FOCUS
     setSelectedLine(lineIdx)
-    console.log('\t-----\n\FOCUS -  ' + lineIdx + '\n\t -----')
+    // console.log('\t-----\n\FOCUS -  ' + lineIdx + '\n\t -----')
 }
 
 
@@ -392,7 +381,7 @@ function onGrabLine(lineIdx, pos) {
     onFocusLine(lineIdx)
     gLastDragPos = pos
     SELECT_STATE = GRABBED
-    console.log('\t-----\n\tGRABBED -  ' + lineIdx + '\n\t -----')
+    // console.log('\t-----\n\tGRABBED -  ' + lineIdx + '\n\t -----')
 }
 
 
@@ -405,7 +394,7 @@ function isResizing() {
 
 function onCircleResizeStart() {
     SELECT_STATE = CIRCLE_RESIZE_START
-    console.log('resize start')
+    // console.log('resize start')
 }
 function onCircleResizeMove(pos) {
     SELECT_STATE = CIRCLE_RESIZE_CHANGE
@@ -413,6 +402,6 @@ function onCircleResizeMove(pos) {
     renderMeme(getMeme())
 }
 function onCircleResizeEnd() {
-    console.log('resize done')
-    SELECT_STATE = IDLE
+    // console.log('resize done')
+    SELECT_STATE = CIRCLE_RESIZE_END
 }

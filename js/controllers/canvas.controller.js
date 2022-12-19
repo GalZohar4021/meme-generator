@@ -1,3 +1,4 @@
+let gLoadedStickers = []
 
 
 function drawText(ctx, line, isSelected = false) {
@@ -19,6 +20,7 @@ function drawText(ctx, line, isSelected = false) {
     ctx.strokeText(line.txt, line.pos.x, line.pos.y)
 
     if (isSelected) drawRectBox(ctx, line)
+    lineLoaded(line)
 }
 
 
@@ -34,7 +36,7 @@ function resizeLine(ctx, line, pos) {
     if (isTextLine(line)) {
         const oldRatioY = oldBoxSize.boxDistanceY / line.font.fontSize
         line.font.fontSize = boxSize.y / oldRatioY
-        console.log('---FONT --', line.font.fontSize)
+        // console.log('---FONT --', line.font.fontSize)
     }
     else {
         line.size.height = boxSize.y
@@ -90,7 +92,7 @@ function getBoxSize(ctx, line) {
         }
 
         else if (line.font.textAlign === 'center') {
-            console.log(right, left)
+            // console.log(right, left)
             boxStartX = line.pos.x - left - paddingX * 3
             boxDistanceX = left + textWidth + paddingX * 6
         }
@@ -101,7 +103,7 @@ function getBoxSize(ctx, line) {
             x: boxStartX + boxDistanceX,
             y: line.pos.y + (paddingY * 0.5)
         }
-        console.log(circlePos)
+        // console.log(circlePos)
         return {
             boxStartX, boxStartY, boxDistanceX, boxDistanceY: boxHeight, paddingX, paddingY, textHeight, circlePos
         }
@@ -139,10 +141,10 @@ function drawImage(meme, container, canv, ctx, img) {
         adjustImageSize(elImg, canv)
 
         ctx.drawImage(elImg, 0, 0, canv.width, canv.height)
-
+        gLoadedStickers = []
         renderLines(ctx, meme)
-        onRenderDone()
     }
+
 }
 
 
@@ -175,6 +177,13 @@ function _renderTextLine(ctx, line, isSelected = false) {
     drawText(ctx, line, isSelected)
 }
 
+function lineLoaded(line) {
+    gLoadedStickers.push(line)
+    if(gLoadedStickers.length === getMeme().lines.length) {
+        onRenderDone()
+    }
+}
+
 
 function _renderStickerLine(ctx, line, isSelected = false) {
     const elImg = new Image()
@@ -183,6 +192,7 @@ function _renderStickerLine(ctx, line, isSelected = false) {
     elImg.onload = () => {
         ctx.drawImage(elImg, line.pos.x, line.pos.y, line.size.width, line.size.height)
         if (isSelected) drawRectBox(ctx, line)
+        lineLoaded(line)
 
     }
 }
@@ -192,7 +202,7 @@ function drawRectBox(ctx, line) {
     const { boxStartX, boxStartY, boxDistanceX, boxDistanceY } = boxSize
 
     ctx.strokeStyle = '#0080FE'
-    console.log(boxDistanceX, boxDistanceY)
+//    console.log(boxDistanceX, boxDistanceY)
 
 
     ctx.strokeRect(boxStartX, boxStartY, boxDistanceX, boxDistanceY)

@@ -110,8 +110,9 @@ div.color-tools label{
 }
 
 nav.actions {
-    margin-block: 2rem;
-    justify-content: space-around;
+    margin-block: 3.5rem;
+
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
 }
@@ -129,10 +130,9 @@ nav.actions {
 
     max-width: 300px;
     max-height: 60px;
-    margin-inline: 1vw;
 
     padding-inline: 1.5vw;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .download a {
@@ -141,7 +141,6 @@ nav.actions {
 }
 
 nav.actions button.share-fb {
-    margin-inline: 1vw;
     height: 7.5vw;
     width: 7.5vw;
 

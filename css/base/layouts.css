@@ -4,7 +4,14 @@
 .sub-layout > * {
     max-width: var(--sub-layout-size);
 }
-
+@media (min-width: 1300px) {
+    .main-layout > * {
+        max-width: 80vw;
+    }
+    .sub-layout > * {
+        max-width: 100%;
+    }
+}
 
 @media (max-width: 600px) {
     .main-layout > * {
