@@ -10,10 +10,12 @@
     align-items: center;
 
     margin-block-end: 2rem;
+
+    width: 100%;
 }
 
 .upload h3 {
-    color: var(--clr-main-shadow-light);
+    color: #8b9fd4;
     font-size: 3rem;
     margin: 0;
 

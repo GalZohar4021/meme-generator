@@ -22,8 +22,7 @@ body {
     margin: 0px;
     min-height: 100%;
     width: 100%;
-    background-image: linear-gradient(to right, #00416a, #e4e5e6);
-    background-size: cover;
+    background-color: rgb(200, 209, 228);;
 }
 
 input {

@@ -90,12 +90,12 @@
 
                 <input type="text" name="editor-text" placeholder="Text line" onkeyup="onEditText(this)">
 
-                <section class="tools flex">
+                <section class="tools flex sub-layout">
                     <button title="Change Line" class="dble-arrow" onclick="onFocusChange()"></button>
                     <button title="Remove Line" class="remove-text" onclick="onRemoveTextLine()"></button>
                     <button title="Add Text" class="add-text" onclick="onAddTextLine()"></button>
                 </section>
-                <div class="size-align font-tools flex-row">
+                <div class="size-align font-tools flex-row  sub-layout">
                     <button title="Align left" class="align-left" onclick="onAlignmentSet('left')"></button>
                     <button title="Align center" class="align-center" onclick="onAlignmentSet('center')"></button>
                     <button title="Align right" class="align-right" onclick="onAlignmentSet('right')"></button>
@@ -103,25 +103,25 @@
                     <button title="Decrease font" class="fsize-down" onclick="onFontSizeDown()"></button>
 
                 </div>
-                <div class="color-tools flex-row">
+                <div class="color-tools flex-row  sub-layout">
                     <label id="stroke-label" for="stroke"></label>
                     <input id="stroke" type='color' oninput="onStrokeDesign(this)" style="opacity: 0;">
                     <label id="color-label" for="font-color"></label>
                     <input id="font-color" type="color" oninput="onFontColorChange(this)" style="opacity: 0;">
                 </div>
-                <div class="more-tools flex-row">
+                <div class="more-tools flex-row  sub-layout">
                     <select title="Fony family" class="font-family-menu" oninput="onFamilyFontChange(this)">
                     </select>
 
                 </div>
 
 
-                <nav class="stickers-bar flex-row">
+                <nav class="stickers-bar flex-row  sub-layout">
 
                 </nav>
 
 
-                <nav class="actions flex-row">
+                <nav class="actions flex-row  sub-layout">
 
                         <button title="Share on facebook" class="share-fb" onclick="onFaceBookShare()"></button>
                         <button title="More share" class="share-nav" onclick="shareNavAPI()">Share!</button>
@@ -136,7 +136,7 @@
         </section>
 
 
-        <section class="page memes-gallery main-layout flex hidden-page">
+        <section class="page memes-gallery main-layout flex-col hidden-page">
             <h3 class="saved-header">Your saved memes</h3>
             <h2 class="direction">Tap to pick meme to edit and download</h2>
             <section class="memes-box flex box-of-contents">

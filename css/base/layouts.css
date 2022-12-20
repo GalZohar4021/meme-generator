@@ -1,15 +1,18 @@
 .main-layout > * {
     max-width: var(--main-layout-size);
 }
+
 .sub-layout > * {
     max-width: var(--sub-layout-size);
+    justify-content: space-around;
 }
+
 @media (min-width: 1300px) {
     .main-layout > * {
         max-width: 80vw;
     }
     .sub-layout > * {
-        max-width: 100%;
+        max-width: 90%;
     }
 }
 
@@ -18,6 +21,6 @@
         max-width: 100vw
     }
     .sub-layout > * {
-        max-width: 100%;
+        max-width: 90%;
     }
 }

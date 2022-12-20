@@ -1,12 +1,11 @@
 .page {
-    margin-top: 1rem;
-    margin: 0 auto;
-    display: block;
+    
 }
 
 content.contents {
     padding-block: 3rem;
     flex-grow: 3;
+    align-items: center;
 }
 
 @media (min-width: 1200px) {

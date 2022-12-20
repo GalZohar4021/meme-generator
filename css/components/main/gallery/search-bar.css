@@ -1,10 +1,14 @@
+
+
 bar.search-bar {
+
+    
     flex-direction: column;
-    margin: 0 auto;
     margin-block: 1rem;
-    padding: 1rem;
+
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    
 }
 
 bar.search-bar container {
@@ -12,13 +16,13 @@ bar.search-bar container {
     margin-block: 1rem;
     justify-content: center;
     font-size: 1.3rem;
-    width: 90%;
+    width: 100%;
 }
 
 bar.search-bar h3 {
     margin: 0;
     font-size: 3rem;
-    color: var(--clr-main-shadow-light);
+    color: #8b9fd4;
 }
 
 
@@ -51,6 +55,7 @@ bar.search-bar .tags-list {
     align-items: flex-start;
     justify-content: flex-start;
     font-size: 1rem;
+    line-height: 2.5;
 }
 
 .more {

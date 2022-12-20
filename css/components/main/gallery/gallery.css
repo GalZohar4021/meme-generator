@@ -8,7 +8,9 @@
     height: fit-content;
     align-content: space-around;
 }
-
+.main-box-gallery{
+    align-items: center;
+}
 
 section.gallery {
     padding-block: 2rem;
@@ -19,8 +21,7 @@ section.gallery {
     margin-block: 2rem;
 
     align-items: center;
-
-    justify-content: space-evenly;
+    justify-content: space-between;
 
 }
 card.img-container:hover {
@@ -31,7 +32,7 @@ card.img-container {
     width: 17.5vw;
     margin-block: 2rem;
     background-color: var(--clr7);
-    box-shadow: 0.2rem 0.25rem 0.7rem var(--clr-main-shadow-light);
+    box-shadow: 0.2rem 0.25rem 0.7rem #263f85;
 }
 
 @media (min-width: 1400px) {
@@ -42,7 +43,7 @@ card.img-container {
 
 @media (max-width: 800px) {
     card.img-container {
-        width: 20vw;
+        width: 25vw;
     }
 }
 @media (max-width: 600px) {
@@ -50,7 +51,7 @@ card.img-container {
         justify-content: space-around;
     }
     card.img-container {
-        width: 45vw;
+        width: 43vw;
     }
 }
 @media (max-width: 375px) {

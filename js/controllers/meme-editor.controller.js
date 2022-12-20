@@ -25,7 +25,7 @@ function initEditMeme(meme) {
     setMeme(meme)
     renderMeme(meme)
     renderStickersBar()
-    if(!gLoadedListeners) {
+    if (!gLoadedListeners) {
         initEditorListeners()
         gLoadedListeners = true
     }
@@ -154,6 +154,7 @@ function onRemoveTextLine() {
     if (getSelectedLineIdx() === -1) return
     const meme = getMeme()
     removeLine(meme, getSelectedLineIdx())
+    setSelectedLine(-1)
     renderMeme(meme)
 }
 
@@ -365,6 +366,7 @@ function onFocusLine(lineIdx) {
 
     SELECT_STATE = FOCUS
     setSelectedLine(lineIdx)
+    renderMeme(getMeme())
     // console.log('\t-----\n\FOCUS -  ' + lineIdx + '\n\t -----')
 }
 

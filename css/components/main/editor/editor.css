@@ -9,6 +9,8 @@
 
     min-height: unset;
     height: fit-content;
+    width: 100%;
+
 }
 
 #meme {
@@ -57,15 +59,15 @@ input[name="editor-text"] {
     margin-block: 2rem;
     background-color: var(--clr6);
     height: 13vw;
-    max-height: 75px;
+    max-height: 45px;
 
     justify-content: center;
     align-items: center;
 }
 
 .stickers-bar img {
-    height: inherit;
     max-height: inherit;
+    width: auto;
 
     margin-inline: 1.5rem;
 
@@ -89,10 +91,10 @@ img.sticker-bar-arrow:hover {
     }
 
     .tools-area {
-        width: 40%;
+        width: 45%;
     }
 
     .meme-container {
-        width: 40%;
+        width: 45%;
     }
 }
